@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>TARgv24_C_._3.Tund.MainClass3osa</StartupObject>
+    <StartupObject>TARgv24_C_._4.Tund.FunktsioonideClass_4osa</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
