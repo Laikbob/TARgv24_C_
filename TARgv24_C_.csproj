@@ -5,11 +5,25 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>TARgv24_C_._4.Tund.FunktsioonideClass_4osa</StartupObject>
+    <StartupObject>TARgv24_C_Sharp.Kangelane.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="2.Tund\" />
+    <Compile Remove="1.Tund\**" />
+    <Compile Remove="2.Tund\**" />
+    <Compile Remove="3.Tund\**" />
+    <Compile Remove="4.Tund\**" />
+    <Compile Remove="OOP\**" />
+    <EmbeddedResource Remove="1.Tund\**" />
+    <EmbeddedResource Remove="2.Tund\**" />
+    <EmbeddedResource Remove="3.Tund\**" />
+    <EmbeddedResource Remove="4.Tund\**" />
+    <EmbeddedResource Remove="OOP\**" />
+    <None Remove="1.Tund\**" />
+    <None Remove="2.Tund\**" />
+    <None Remove="3.Tund\**" />
+    <None Remove="4.Tund\**" />
+    <None Remove="OOP\**" />
   </ItemGroup>
 
 </Project>
