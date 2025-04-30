@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace TARgv24_C_Sharp._1._ja_2._osa___Põhi__ja_valikute_konstruktsionid
+namespace TARgv24_C_._1.Tund
 {
-    class FunktsioonideClass_1_2osa
+    class FunktsioonideClass
     {
         public static float Kalkulaator(int arv1, int arv2)
         {
