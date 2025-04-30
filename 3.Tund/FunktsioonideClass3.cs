@@ -10,54 +10,52 @@ namespace TARgv24_C_._3.Tund
 {
     internal class FunktsioonideClass3osa
     {
-        public static string FailiPath(string path)
+        public static List<string> Sõnad()
         {
-            string faili_path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{path}");
-            return faili_path;
+            List<string> sonad = new List<string>();
+            for (int j = 0; j < 5; j++)
+            {
+                Console.Write("Nimi: ");
+                sonad.Add(Console.ReadLine());
+            }
+            return sonad;
         }
 
-        public static void FailiKirjutamine(string path)
+        public static Isik[] Isikud(int k, string[] nimed, string[] aadressid)
         {
-            try
+            Isik[] isikud = new Isik[k];
+
+            for (int i = 0; i < k; i++)
             {
-                using (StreamWriter text = new StreamWriter(path, true))  // Fail suletakse automaatselt siin
+                Console.WriteLine(i);
+                //isikud[i] = new Isik();
+                Console.Write("Isikukood: ");
+                isikud[i] = new Isik
                 {
-                    text.WriteLine("Juuni\nJuuli\nAugust");
-                }
+                    Nimi = nimed[i],
+                    Vanus = 50,
+                    Isikukood = Console.ReadLine(),
+                    Aadress = aadressid[i]
+                };
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Mingi viga failiga");
-            }
+            return isikud;
         }
-
-        public static List<string> FailiLugemine(string path)
+        public static List<Isik> Isikud2(int k, string[] nimed, string[] aadressid)
         {
-            List<string> kuude_list = new List<string>();
-            try
+            List<Isik> isikud2 = new List<Isik>();
+            for (int j = 0; j > k; j++)
             {
-                foreach (string rida in File.ReadAllLines(path))
+                Console.WriteLine(j);
+                Isik isik = new Isik
                 {
-                    kuude_list.Add(rida);
-                }
+                    Nimi = nimed[j],
+                    Vanus = 50,
+                    Isikukood = "111111111111",
+                    Aadress = aadressid[j]
+                };
+                isikud2.Add(isik);
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Viga failiga!");
-            }
-
-            return kuude_list;
+            return isikud2;
         }
-
-        public static void EemaldamineMuutmine(string path, List<string> kuude_list)
-        {
-            kuude_list.Remove("Juuni");
-
-            if (kuude_list.Count > 0)
-                kuude_list[0] = "Veeel kuuu";
-
-            Console.WriteLine("--------------Kustutasime juuni-----------");
-        }
-
     }
 }
