@@ -10,98 +10,54 @@ namespace TARgv24_C_._3.Tund
     {
         public static void Main(string[] args)
         {
-            string path;
+            // III. osa Kordused, Massivid, Listid, Klassid
 
-            // ------- Faili kirjutamine(StreamWriter) -------
-            try
-            {
-                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "C:\\Users\\opilane\\source\\repos\\TARgv24_C_\\3.Tund\\Kuud.txt"); //@"..\..\..\Kuud.txt"
-                using (StreamWriter text = new StreamWriter(path, true))  // Fail suletakse automaatselt siin
-                {
-                    Console.WriteLine("Sisesta mingi tekst: ");
-                    string lause = Console.ReadLine();
-                    text.WriteLine(lause);
-                }
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Mingi viga failiga");
-            }
+            Isik isik1 = new Isik("Juku", 18, "12345678901", "Tallinn");
+            isik1.PrindiInfo();
+            Isik isik2 = new Isik();
+            isik2.Nimi = "Mari";
+            isik2.Aadress = "Tartu";
+            isik2.Isikukood = "98765432101";
+            isik2.Sugu = Sugu.Naine;
+            isik2.PrindiInfo();
 
 
-            // ------ Faili lugemine (StreamReader) --------
-            try
+            int i;
+            string[] nimed = new string[10] { "Juku", "Mari", "Kati", "Peeter", "Mati", "Liina", "Katrin", "Andres", "Marko", "Kristi" };
+            string[] aadressid = new string[10] { "Tallinn", "Tartu", "Pärnu", "Narva", "Kohtla-Järve", "Viljandi", "Rakvere", "Paide", "Jõhvi", "Kuressaare" };
+            Console.WriteLine("----- for++ Massiv -------");
+            Isik[] isikud = FunktsioonideClass_3osa.Isikud(nimed.Length, nimed, aadressid);
+            for (i = 0; i < nimed.Length; i++)
             {
-                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "C:\\Users\\opilane\\Source\\Repos\\TARgv24_C_Sharp\\3. Failitöötlus\\Kuud.txt");
-                StreamReader text = new StreamReader(path);
-                string laused = text.ReadToEnd();
-                text.Close();
-                Console.WriteLine(laused);
+                isikud[i].PrindiInfo();
             }
-            catch (Exception)
+
+            Console.WriteLine("----- for-- List -------");
+            List<Isik> isikud2 = FunktsioonideClass_3osa.Isikud2(nimed.Length, nimed, aadressid);
+
+            foreach (Isik isik in isikud2)
             {
-                Console.WriteLine("Mingi viga failiga, ei saa faili lugeda");
+                isik.PrindiInfo();
             }
 
 
-            // ------ Ridade lugemine List<string> abil -------
-            List<string> kuude_list = new List<string>();
-            try
+            Console.WriteLine("--------- while ----------");
+            while (i>=0)
             {
-                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "C:\\Users\\opilane\\Source\\Repos\\TARgv24_C_Sharp\\3. Failitöötlus\\Kuud.txt");
-                foreach (string rida in File.ReadAllLines(path))
-                {
-                    kuude_list.Add(rida);
-                }
+                Console.WriteLine(i);
+                i--;
             }
-            catch (Exception)
+            Console.WriteLine("--------- do ----------");
+            ConsoleKeyInfo key = new ConsoleKeyInfo();
+            do
             {
-                Console.WriteLine("Viga failiga!");
+                Console.WriteLine("Väljuta Backspace");
+                key= Console.ReadKey();
             }
+            while (key.Key!=ConsoleKey.Backspace);
 
 
-            // ------ Listi muutmine ja kuvamine -------
-            foreach (string kuu in kuude_list)
-            {
-                Console.WriteLine(kuu);
-            }
-
-            // Eemalda "Juuni"
-            kuude_list.Remove("Juuni");
-
-            // Muuda esimest elementi
-            if (kuude_list.Count > 0)
-                kuude_list[0] = "Veeel kuuu";
-
-            Console.WriteLine("--------------Kustutasime juuni-----------");
-
-            foreach (string kuu in kuude_list)
-            {
-                Console.WriteLine(kuu);
-            }
-
-
-            // ------ Otsing nimekirjast -------
-            Console.WriteLine("Sisesta kuu nimi, mida otsida:");
-            string otsitav = Console.ReadLine();
-
-            if (kuude_list.Contains(otsitav))
-                Console.WriteLine("Kuu " + otsitav + " on olemas.");
-            else
-                Console.WriteLine("Sellist kuud pole.");
-
-
-            // -----  Listi salvestamine tagasi faili ------
-            path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Kuud.txt");
-            File.WriteAllLines(path, kuude_list);
-            Console.WriteLine("Andmed on salvestatud.");
-
-
-
-            ///////////////////////////////////////////////////
-
-            // ------ Ülesanne ------
-
+            Console.ReadKey();
         }
     }
 }
