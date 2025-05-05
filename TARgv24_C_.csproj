@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>TARgv24_C_Sharp.Kangelane.Program</StartupObject>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,16 +13,19 @@
     <Compile Remove="2.Tund\**" />
     <Compile Remove="3.Tund\**" />
     <Compile Remove="4.Tund\**" />
+    <Compile Remove="Kangelane\**" />
     <Compile Remove="OOP\**" />
     <EmbeddedResource Remove="1.Tund\**" />
     <EmbeddedResource Remove="2.Tund\**" />
     <EmbeddedResource Remove="3.Tund\**" />
     <EmbeddedResource Remove="4.Tund\**" />
+    <EmbeddedResource Remove="Kangelane\**" />
     <EmbeddedResource Remove="OOP\**" />
     <None Remove="1.Tund\**" />
     <None Remove="2.Tund\**" />
     <None Remove="3.Tund\**" />
     <None Remove="4.Tund\**" />
+    <None Remove="Kangelane\**" />
     <None Remove="OOP\**" />
   </ItemGroup>
 
