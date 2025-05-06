@@ -18,7 +18,7 @@ namespace TARgv24_C_.Madu
                 Point p = new Point(x,y,sym);
                 plist.Add(p);
             }
-
+         
         }
         public void Drow()
         {
