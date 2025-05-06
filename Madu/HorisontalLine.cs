@@ -6,24 +6,15 @@ using System.Threading.Tasks;
 
 namespace TARgv24_C_.Madu
 {
-    class HorisontalLine
+    class HorizontalLine : Figure  // наследник класса Figure
     {
-        List<Point> plist;
-        public HorisontalLine(int xLeft, int xRight, int y, char sym)
+        public HorizontalLine(int xLeft, int xRight, int y, char sym)
         {
-            plist = new List<Point>();
+            pList = new List<Point>();
             for (int x = xLeft; x <= xRight; x++)
-            { 
-                Point p = new Point(x,y,sym);
-                plist.Add(p); 
-            }
-           
-        }
-        public void Drow()
-        {
-            foreach (Point p in plist)
             {
-                p.Draw();
+                Point p = new Point(x, y, sym);
+                pList.Add(p);
             }
         }
     }

@@ -6,25 +6,15 @@ using System.Threading.Tasks;
 
 namespace TARgv24_C_.Madu
 {
-    class VertikalLine
+    class VerticalLine : Figure  // наследник класса Figure
     {
-        List<Point> plist;
-
-        public VertikalLine(int yUp, int yDown, int x, char sym)
+        public VerticalLine(int yUp, int yDown, int x, char sym)
         {
-            plist = new List<Point>();
-            for (int y=yUp; y<=yDown; y++)
+            pList = new List<Point>();
+            for (int y = yUp; y <= yDown; y++)
             {
-                Point p = new Point(x,y,sym);
-                plist.Add(p);
-            }
-         
-        }
-        public void Drow()
-        {
-            foreach (Point p in plist)
-            {
-                p.Draw();
+                Point p = new Point(x, y, sym);
+                pList.Add(p);
             }
         }
     }
