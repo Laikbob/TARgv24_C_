@@ -13,8 +13,8 @@ namespace TARgv24_C_.Madu
             Console.SetWindowSize(80, 25);
 
 
-            //Границы поля
-            HorisontalLine upLine= new HorisontalLine( 0, 78, 0, '=');
+        //Границы поля
+            HorisontalLine upLine = new HorisontalLine(0, 78, 0, '=');
             HorisontalLine downLine = new HorisontalLine(0, 78, 24, '=');
             VertikalLine leftLine = new VertikalLine(0, 24, 0, '=');
             VertikalLine rightLine = new VertikalLine(0,24, 78,'=');
@@ -24,10 +24,9 @@ namespace TARgv24_C_.Madu
             rightLine.Drow();
 
             Point p = new Point(4,5,'*');
-            p.Draw();
+            Snake snake = new Snake(p,4, Derection.Right);
+            snake.Drow();  
 
-
-            Console.ReadLine();
         }
       
     }

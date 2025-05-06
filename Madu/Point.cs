@@ -12,10 +12,32 @@ namespace TARgv24_C_.Madu
         public int y;
         public char sym;
 
-        public Point()
+        public Point(Point p)
         {
+            x = p.x;
+            y = p.y;
+            sym = p.sym;
         }
 
+        public void Move(int offset, Derection direction)
+        {
+            if (direction == Derection.Right)
+            {
+                x = x + offset;
+            }
+            else if (direction == Derection.Left)
+            {
+                x = x - offset;
+            }
+            else if (direction == Derection.Up)
+            {
+                y = y + offset;
+            }
+            else if (direction == Derection.Down)
+            { 
+                y = y - offset;  
+            }
+        }
         public Point(int _x, int _y, char _sym)
         {
             x = _x;
@@ -29,6 +51,11 @@ namespace TARgv24_C_.Madu
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+
+        public override string ToString()
+        {
+            return x + ", " + y + ", " + sym;
         }
     }
 }
