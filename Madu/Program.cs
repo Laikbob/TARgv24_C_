@@ -13,20 +13,44 @@ namespace TARgv24_C_.Madu
             Console.SetWindowSize(80, 25);
 
 
-        //Границы поля
+            //Границы поля
             HorisontalLine upLine = new HorisontalLine(0, 78, 0, '=');
             HorisontalLine downLine = new HorisontalLine(0, 78, 24, '=');
             VertikalLine leftLine = new VertikalLine(0, 24, 0, '=');
             VertikalLine rightLine = new VertikalLine(0,24, 78,'=');
-            upLine.Drow();
-            downLine.Drow();
-            leftLine.Drow();
-            rightLine.Drow();
+            upLine.Draw();
+            downLine.Draw();
+            leftLine.Draw();
+            rightLine.Draw();
 
+            // отрисовка точек
             Point p = new Point(4,5,'*');
             Snake snake = new Snake(p,4, Derection.Right);
-            snake.Drow();  
+            snake.Draw();
 
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
+            while (true)
+            {
+                if (snake.Eat(food))
+                { 
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+                Thread.Sleep(100);
+
+                if (Console.KeyAvailable)
+                { 
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+            }
         }
       
     }

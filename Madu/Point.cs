@@ -31,11 +31,11 @@ namespace TARgv24_C_.Madu
             }
             else if (direction == Derection.Up)
             {
-                y = y + offset;
+                y = y - offset;
             }
             else if (direction == Derection.Down)
             { 
-                y = y - offset;  
+                y = y + offset;  
             }
         }
         public Point(int _x, int _y, char _sym)
@@ -46,6 +46,17 @@ namespace TARgv24_C_.Madu
 
             
         }
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
+
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
 
         public void Draw()
         {

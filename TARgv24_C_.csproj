@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject></StartupObject>
+    <StartupObject>TARgv24_C_.Madu.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
