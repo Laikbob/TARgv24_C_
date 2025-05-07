@@ -17,5 +17,13 @@ namespace TARgv24_C_.Madu
                 plist.Add(p);
             }
         }
+        public override void Draw()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            base.Draw();
+
+            Console.ForegroundColor= ConsoleColor.White;
+        }
     }
 }
